@@ -1,0 +1,15 @@
+#!/bin/bash
+params=()
+i=0
+for param in $@
+do
+	param=param | tr '[:upper:]' '[:lower:]'
+	if [ "$param" == "debug" ]; then
+	export KARAF_DEBUG=1
+	else
+	params[$i]=$param
+	i=$((i+1))
+	fi
+done
+cd /opt/apache-karaf-2.3.1/bin/
+exec ./karaf "$params"
