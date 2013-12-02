@@ -11,5 +11,5 @@ do
 	i=$((i+1))
 	fi
 done
-cd /opt/apache-karaf-2.3.1/bin/
+cd /opt/apache-karaf-2.3.3/bin/
 exec ./karaf "$params"
